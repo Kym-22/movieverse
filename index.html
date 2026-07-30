@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 MovieVerse</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo">
+            <i class="fa-solid fa-film"></i>
+            <h1>MovieVerse</h1>
+        </div>
+
+        <div class="searchBox">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="searchInput" placeholder="Buscar películas...">
+        </div>
+
+        <div style="display:flex;gap:15px;align-items:center;">
+
+            <button id="langToggle" style="padding:10px 15px;font-size:16px;">
+                Inglés
+            </button>
+
+            <div class="favoriteBox">
+                <i class="fa-solid fa-heart"></i>
+                <span id="favoriteCounter">0</span>
+            </div>
+
+        </div>
+
+    </header>
+
+    <nav class="filters">
+
+        <button class="filter active" data-genre="all">Todas</button>
+        <button class="filter" data-genre="Action">Acción</button>
+        <button class="filter" data-genre="Adventure">Aventura</button>
+        <button class="filter" data-genre="Comedy">Comedia</button>
+        <button class="filter" data-genre="Drama">Drama</button>
+        <button class="filter" data-genre="Romance">Romance</button>
+        <button class="filter" data-genre="Animation">Animación</button>
+        <button class="filter" data-genre="Horror">Terror</button>
+
+    </nav>
+
+    <section id="spinner">
+        <div class="loader"></div>
+        <p>Cargando películas...</p>
+    </section>
+
+    <section id="welcome"></section>
+
+    <main id="moviesContainer"></main>
+
+    <section id="noResults" style="display:none;">
+        <h2>No se encontraron películas 😢</h2>
+        <p>Intenta escribir otro nombre.</p>
+    </section>
+
+    <div class="modal" id="movieModal">
+
+        <div class="modalContent">
+
+            <span class="closeModal">&times;</span>
+
+            <div id="modalBody"></div>
+
+        </div>
+
+    </div>
+
+    <footer>
+        <p>🎬 MovieVerse | API OMDb | JavaScript | HTML | CSS</p>
+    </footer>
+
+    <script type="module" src="js/main.js"></script>
+
+</body>
+
+</html>
