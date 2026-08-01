@@ -1,4 +1,9 @@
-export function renderMovies(movieList, moviesContainer, currentLang, i18n) {
+export function renderMovies(
+    movieList: any[],
+    moviesContainer: HTMLElement,
+    currentLang: string,
+    i18n: any
+): void {
 
     moviesContainer.innerHTML = "";
 
@@ -15,9 +20,10 @@ export function renderMovies(movieList, moviesContainer, currentLang, i18n) {
         `;
 
         return;
+
     }
 
-    movieList.forEach(movie => {
+    movieList.forEach((movie: any) => {
 
         const card = document.createElement("div");
         card.className = "movie-card";
@@ -51,7 +57,7 @@ export function renderMovies(movieList, moviesContainer, currentLang, i18n) {
         const favoriteBtn = document.createElement("button");
         favoriteBtn.className = "favoriteBtn";
         favoriteBtn.dataset.id = movie.imdbID;
-        favoriteBtn.innerHTML = t.btnAdd;
+        favoriteBtn.innerHTML = t.add;
 
         info.appendChild(title);
         info.appendChild(year);
@@ -70,7 +76,13 @@ export function renderMovies(movieList, moviesContainer, currentLang, i18n) {
 
 }
 
-export function openModal(movie, modal, modalBody, currentLang, i18n) {
+export function openModal(
+    movie: any,
+    modal: HTMLElement,
+    modalBody: HTMLElement,
+    currentLang: string,
+    i18n: any
+): void {
 
     modal.classList.add("active");
 
